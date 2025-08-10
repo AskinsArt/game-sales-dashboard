@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Game Genre Sales Dashboard</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+    /* Background animation */
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+      background: linear-gradient(-45deg, #6a11cb, #2575fc, #6a11cb, #2575fc);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+    }
+
+    h1 {
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+      animation-delay: 0.5s;
+      margin-bottom: 10px;
+    }
+
+    #chartContainer {
+      width: 100%;
+      max-width: 700px;
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+      animation-delay: 1.5s;
+    }
+
+    #description {
+      margin-top: 15px;
+      font-size: 1rem;
+      line-height: 1.4;
+      color: #333;
+    }
+
+    /* Button styles */
+    .btn {
+      background-color: #2575fc;
+      border: none;
+      color: white;
+      padding: 10px 15px;
+      margin: 10px 5px 0;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #1a5fc4;
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    /* Mobile responsive tweaks */
+    @media (max-width: 768px) {
+      #chartContainer {
+        padding: 10px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      #description {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Video Game Sales by Genre</h1>
+
+  <div id="chartContainer">
+    <div id="pieChart"></div>
+    <p id="description">
+      Action and Sports genres dominate the market, while Puzzle and Strategy genres hold smaller shares. This distribution highlights market trends and potential areas for niche development.
+    </p>
+    <button class="btn" onclick="showPie()">Pie Chart</button>
+    <button class="btn" onclick="showBar()">Bar Chart</button>
+  </div>
+
+  <script>
+    var genres = ['Action', 'Adventure', 'Fighting', 'Misc', 'Platform', 'Puzzle', 'Racing', 'Role-Playing', 'Shooter', 'Simulation', 'Sports', 'Strategy'];
+    var sales = [1745.27, 237.69, 447.48, 803.18, 828.08, 243.02, 728.9, 934.4, 1052.94, 390.42, 1332, 174.5];
+
+    var colors = [
+      '#ff6f61', '#6b5b95', '#88b04b', '#ffa500', '#00ced1', '#ffb347',
+      '#c94c4c', '#50394c', '#ff7f50', '#2e8b57', '#4682b4', '#d2691e'
+    ];
+
+    function showPie() {
+      var data = [{
+        values: sales,
+        labels: genres,
+        type: 'pie',
+        marker: { colors: colors },
+        textinfo: 'label+percent',
+        insidetextorientation: 'radial',
+        hoverinfo: 'label+value+percent'
+      }];
+
+      var layout = {
+        height: 500,
+        width: '100%',
+        showlegend: true
+      };
+
+      Plotly.newPlot('pieChart', data, layout, {responsive: true});
+    }
+
+    function showBar() {
+      var data = [{
+        x: genres,
+        y: sales,
+        type: 'bar',
+        marker: { color: colors },
+        hoverinfo: 'x+y'
+      }];
+
+      var layout = {
+        height: 500,
+        width: '100%',
+        xaxis: { title: 'Genre' },
+        yaxis: { title: 'Global Sales (Millions)' }
+      };
+
+      Plotly.newPlot('pieChart', data, layout, {responsive: true});
+    }
+
+    // Show the pie chart by default
+    showPie();
+  </script>
+
+</body>
+</html>
