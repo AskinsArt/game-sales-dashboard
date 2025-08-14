@@ -8,7 +8,9 @@ Interactive video game sales dashboard built with HTML, CSS, and JavaScript (Plo
 An interactive dashboard visualizing global video game sales by genre.  
 Built with HTML, CSS, JavaScript, and Plotly.js — fully responsive and mobile-friendly.
 
-![Game Sales Dashboard Screenshot](download.png)
+<p align="center">
+  <img src="download.png" alt="Game Sales Dashboard Screenshot" width="600">
+</p>
 
 ---
 
