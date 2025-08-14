@@ -40,3 +40,6 @@ Clone the repository:
 ```bash
 git clone https://github.com/AskinsArt/game-sales-dashboard.git
 ```
+
+## 📧 Contact
+Created by **Dominic Hawes** — feel free to connect on [LinkedIn](https://www.linkedin.com/in/dominic-hawes/).
