@@ -1,19 +1,28 @@
-# game-sales-dashboard
+# Game Sales Dashboard
+
 Interactive video game sales dashboard built with HTML, CSS, and JavaScript (Plotly.js).
-# 🎮 Interactive Video Game Sales Dashboard
 
+---
+
+## 🎮 Interactive Video Game Sales Dashboard
 An interactive dashboard visualizing global video game sales by genre.  
-Built with **HTML, CSS, JavaScript**, and **Plotly.js** — fully responsive and mobile-friendly.
+Built with HTML, CSS, JavaScript, and Plotly.js — fully responsive and mobile-friendly.
 
-🔗 **Live Demo:** [View on Replit](YOUR_REPLIT_LINK_HERE)
+![Game Sales Dashboard Screenshot](screenshot.png)  
+*Replace `screenshot.png` with your actual screenshot file.*
+
+---
+
+## 🔗 Live Demo
+View the live project here: [GitHub Pages Demo](https://askinsart.github.io/game-sales-dashboard/)
 
 ---
 
 ## 📊 Features
-- **Interactive Pie & Bar Charts** – switch between chart types with one click.
-- **Real Dataset** – based on publicly available game sales data.
-- **Smooth Visual Effects** – fade-in animations and gradient background.
-- **Responsive Design** – looks great on desktop, tablet, and mobile.
+- **Interactive Pie & Bar Charts** – switch between chart types with one click.  
+- **Real Dataset** – based on publicly available game sales data.  
+- **Smooth Visual Effects** – fade-in animations and gradient background.  
+- **Responsive Design** – looks great on desktop, tablet, and mobile.  
 - **Hover Tooltips** – explore detailed data values by hovering.
 
 ---
@@ -26,6 +35,7 @@ Built with **HTML, CSS, JavaScript**, and **Plotly.js** — fully responsive and
 ---
 
 ## 🚀 How to Run Locally
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/game-sales-dashboard.git
+Clone the repository:  
+```bash
+git clone https://github.com/AskinsArt/game-sales-dashboard.git
+```
